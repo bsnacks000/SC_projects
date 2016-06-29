@@ -1,0 +1,6 @@
+(
+	name: "TestClass",
+	path: "TestClass",
+	summary: "Quark install and uninstall tests for local classes"
+)
+
