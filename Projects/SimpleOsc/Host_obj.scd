@@ -18,7 +18,7 @@
 		//Boot options for default server s
 
 		s.options.numInputBusChannels = 0;
-		s.options.numOutputBusChannels = 4;
+		s.options.numOutputBusChannels = 2;
 		s.options.device = "SimpleOsc"; //jack_client name
 
 		s.waitForBoot({   // block while server boots
@@ -46,7 +46,5 @@
 		get_bus:{
 			audio_bus;
 		}
-
-
 	)
 };

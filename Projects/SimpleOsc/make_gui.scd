@@ -59,7 +59,7 @@
 		overall_amp.background_(Color(0,0,0,0.25)).value_(0.5).action_({
 			|obj| callbacks[0][\amp_slider].value(obj, synth, \overall_amp)});
 
-		parent.onClose_({synth.free;})
+		parent.onClose_({parent.closeAll; synth.free; s.quit;})
 
 	}.value;
 };

@@ -79,10 +79,18 @@ x.stop
 
 //controls
 
-Pdefn(\dur, Prand([0.05,0.01,0.08],inf));
-Pdefn(\freq_val, Prand([300,11250,16100,100,2004],inf));
-Pdefn(\atk, 0.0007);
-Pdefn(\dcy, 0.005);
+Pdefn(\dur, Prand([0.05,0.01,0.08, 0.3],inf));
+Pdefn(\dur, 0.2);
+
+
+Pdefn(\freq_val, Prand([300,1250,1600,100,2004],inf));
+Pdefn(\freq_val, Pseg(Pseq([100,300,200,600],inf), Pdefn(\dur),\exp,inf));
+
+
+Pdefn(\atk, 0.03);
+Pdefn(\dcy, 0.01);
 Pdefn(\sus, 0.1);
-Pdefn(\rel, 0.1);
+Pdefn(\rel, 0.001);
+
+
 
