@@ -1,0 +1,6 @@
+(
+	name: "TestModule2",
+	path: "TestModule2",
+	summary: "Another TestModule..."
+
+)

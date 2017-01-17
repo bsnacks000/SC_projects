@@ -1,5 +1,6 @@
 // JIT, Audio and Server Code
 
+
 (
 SynthDef(\grain, {|out=0, freq=400, amp=0.1, atk=0.01, rel=0.05, pos=0 |
 	var env = EnvGen.ar(Env.perc(atk,rel),doneAction:2) * amp;
@@ -92,10 +93,11 @@ p = ProxySpace.new(s).know_(true);
 
 	{
 
-		p[pattern].ar;
+		p[pattern].ar; // add the pattern and output bus to the proxyspace
 		p[out].ar;
-		p[out] = p[pattern];
-		p.fadeTime = 3;
+
+		p[out] = p[pattern];  // set the pattern to the output bus
+		p.fadeTime = 3;         // set Pspace wide fadeTime
 
 	}.value;
 
@@ -144,6 +146,8 @@ p  //both are in there
 ~test2.param.freq = Pexprand(200,500);
 ~test2.param.dur = 0.1;
 )
+
+// after setting param events call the function...
 ~test.cloudGen(1)
 ~test2.cloudGen(1)
 
